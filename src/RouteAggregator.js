@@ -101,7 +101,7 @@ export default class RouteAggregator {
     });
 
     relayRoute.name =
-      ['$$_aggregated', ...Object.keys(relayRoute.queries)].join('-');
+      ['XX_aggregated', ...Object.keys(relayRoute.queries)].join('-');
 
     // RootContainer uses referential equality to check for route change, so
     // replace the route object entirely.
@@ -118,7 +118,7 @@ export default class RouteAggregator {
     if (route.name) {
       // The slightly different template here ensures that we can't have
       // collisions with the below template.
-      return `$_${route.name}_${key}_${queryName}`;
+      return `X_${route.name}_${key}_${queryName}`;
     }
 
     // Otherwise, use referential equality on the route name to generate a
@@ -129,7 +129,7 @@ export default class RouteAggregator {
       this._routeIndices.set(route, routeIndex);
     }
 
-    return `$$_route[${routeIndex}]_${key}_${queryName}`;
+    return `XX_route[${routeIndex}]_${key}_${queryName}`;
   }
 
   setFailure(error, retry) {
