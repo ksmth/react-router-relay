@@ -5,7 +5,7 @@ import Relay from 'react-relay';
 import getParamsForRoute from './utils/getParamsForRoute';
 import getRouteQueries from './utils/getRouteQueries';
 
-const DEFAULT_KEY = '@@default';
+const DEFAULT_KEY = 'QQdefault';
 
 export default class RouteAggregator {
   constructor() {
@@ -129,7 +129,7 @@ export default class RouteAggregator {
       this._routeIndices.set(route, routeIndex);
     }
 
-    return `XX_route[${routeIndex}]_${key}_${queryName}`;
+    return `XX_route_-${routeIndex}-__${key}_${queryName}`;
   }
 
   setFailure(error, retry) {
