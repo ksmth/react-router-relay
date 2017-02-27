@@ -113,7 +113,7 @@ var RouteAggregator = function () {
       });
     });
 
-    relayRoute.name = ['XX_aggregated'].concat(_Object$keys(relayRoute.queries)).join('-');
+    relayRoute.name = ['XXLaggregated'].concat(_Object$keys(relayRoute.queries)).join('-');
 
     // RootContainer uses referential equality to check for route change, so
     // replace the route object entirely.
@@ -130,7 +130,7 @@ var RouteAggregator = function () {
     if (route.name) {
       // The slightly different template here ensures that we can't have
       // collisions with the below template.
-      return 'X_' + route.name + '_' + key + '_' + queryName;
+      return 'XL' + route.name + 'L' + key + 'L' + queryName;
     }
 
     // Otherwise, use referential equality on the route name to generate a
@@ -141,7 +141,7 @@ var RouteAggregator = function () {
       this._routeIndices.set(route, routeIndex);
     }
 
-    return 'XX_route_-' + routeIndex + '-__' + key + '_' + queryName;
+    return 'XXLrouteI' + routeIndex + 'I' + key + 'L' + queryName;
   };
 
   RouteAggregator.prototype.setFailure = function setFailure(error, retry) {

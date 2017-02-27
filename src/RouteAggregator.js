@@ -101,7 +101,7 @@ export default class RouteAggregator {
     });
 
     relayRoute.name =
-      ['XX_aggregated', ...Object.keys(relayRoute.queries)].join('-');
+      ['XXLaggregated', ...Object.keys(relayRoute.queries)].join('-');
 
     // RootContainer uses referential equality to check for route change, so
     // replace the route object entirely.
@@ -118,7 +118,7 @@ export default class RouteAggregator {
     if (route.name) {
       // The slightly different template here ensures that we can't have
       // collisions with the below template.
-      return `X_${route.name}_${key}_${queryName}`;
+      return `XL${route.name}L${key}L${queryName}`;
     }
 
     // Otherwise, use referential equality on the route name to generate a
@@ -129,7 +129,7 @@ export default class RouteAggregator {
       this._routeIndices.set(route, routeIndex);
     }
 
-    return `XX_route_-${routeIndex}-__${key}_${queryName}`;
+    return `XXLrouteI${routeIndex}I${key}L${queryName}`;
   }
 
   setFailure(error, retry) {
